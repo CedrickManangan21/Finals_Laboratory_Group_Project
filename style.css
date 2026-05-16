@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: rgb(124, 12, 98);
+    font-family: "Lucida Sans", sans-serif;
+    font-size: 17px;
+}
+
+.page{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+  grid-template-areas:
+  'upperheader'
+  'mainheader'
+  'navbar'
+  'mainfooter';
+  grid-template-rows: auto auto 1fr;
+}
+
+/*This is for the social links*/
+
+.upperheader ul, li{
+     gap: 40px;
+    padding: 10px;
+    display: flex;
+     list-style-type: none;
+   background-color: rgb(42, 7, 34);
+}
+
+.upperheader img{
+    height: 20px;
+}
+
+.sociallinks{
+    margin: 0;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
+
+/*This is for mainheader*/
+
+.mainheader{
+    background-color: rgb(71, 12, 58);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainheader img{
+    height: 55px;
+}
+
+.navbar{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar a{
+    font-weight: bolder;
+    padding: 10px;
+    color: white;
+   text-decoration: none;
+}
+
+/*This is for maincontent*/
+
+.maincontent{
+
+}
+
+.maincontent img {
+
+    padding: 10px;
+    width: 100%;        
+    height: 400px;          
+    object-position: center;
+    display: block;      
+}
+
+
+/*This is for footer*/
+
+.mainfooter{
+     padding: 30px;
+    color: white;
+    background-color:  rgb(42, 7, 34);
+}
+
+hr {
+  width: 90%;
+}
+
+
+footer img{
+    height: 40px;
+}
+
+
+
+
+
+@media (max-width: 700px){
+.page{
+    grid-template-areas:
+  "upperheader"
+ "mainheader"
+  "navbar"
+  "mainfooter";
+  grid-template-columns: 1fr;
+}
+
+.mainheader , .upperheader{
+    flex-direction: column;
+}
+.navbar{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+}
