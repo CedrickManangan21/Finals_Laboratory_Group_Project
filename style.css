@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(124, 12, 98);
+    font-family: "Lucida Sans", sans-serif;
+    font-size: 17px;
+    height: 100%;
+}
+
+.page{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+  grid-template-areas:
+  "upperheader"
+  "mainheader"
+  "navbar"
+  "mainfooter";
+  grid-template-rows: auto auto auto 1fr;
+}
+
+
+/*This is for the social links*/
+
+.upperheader ul, li{
+     gap: 40px;
+    padding: 10px;
+    display: flex;
+     list-style-type: none;
+   background-color: rgb(42, 7, 34);
+}
+
+.upperheader img{
+    height: 20px;
+}
+
+.sociallinks{
+    margin: 0;
+    display: flex;
+    justify-content:end;
+}
+
+/*This is for mainheader*/
+
+.mainheader{
+    background-color: rgb(71, 12, 58);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainheader img{
+    height: 55px;
+}
+
+.navbar{
+    border: 2px solid  rgb(42, 7, 34);
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+}
+
+.navbar a{
+    font-weight: bolder;
+    padding: 10px;
+    color: white;
+   text-decoration: none;
+}
+
+.navbar a:hover{
+    background-color: rgb(42, 7, 34);
+}
+
+
+/*This is for main content*/
+
+
+.banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/BANNER.webp");
+  min-height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-text {
+   padding: 50px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+
+  transform: translate(-50%, -50%);
+
+   animation-name: slideRightAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+/*This is for sidebar*/
+.sidebar{
+    padding: 24px;
+    background-color: aliceblue;
+}
+
+/*This is for footer*/
+
+.mainfooter{
+     padding: 30px;
+    color: white;
+    background-color:  rgb(42, 7, 34);
+}
+
+hr {
+  width: 100%;
+}
+
+
+footer img{
+    height: 40px;
+}
+
+/*other things*/
+
+@keyframes slideRightAnimation {
+  0% { transform: translateX(100% -50%); opacity: 0; }
+  100% { transform: translateX(-50% -50%); opacity: 1; }
+}
+
+@media (max-width: 760px){
+.page{
+    grid-template-areas:
+  "upperheader"
+ "mainheader"
+  "navbar"
+  "mainfooter";
+  grid-template-columns: 1fr;
+}
+
+.mainheader , .upperheader , .mainfooter{
+    flex-direction: column;
+}
+
+.navbar{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+}
+
